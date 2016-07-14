@@ -1,0 +1,12 @@
+# Ignore elasticsearch configurations
+elasticsearch/*/*
+!elasticsearch/config/.gitkeep
+!elasticsearch/data/.gitkeep
+
+# Ignore fluentd configurations
+fluentd/config/*
+!fluentd/config/.gitkeep
+
+# Ignore kibana configurations
+kibana/config/*
+!kibana/config/.gitkeep
