@@ -1,0 +1,13 @@
+version: '2'
+services:
+  elasticsearch:
+    image: elasticsearch:2.3.4
+    ports:
+      - '9200:9200'
+    networks:
+      - monitoring_net
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
+networks:
+  monitoring_net:
+    driver: bridge
