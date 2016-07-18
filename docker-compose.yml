@@ -18,6 +18,14 @@ services:
       - ./kibana/config/:/opt/kibana/config/
     depends_on:
       - elasticsearch
+  dockerbeats:
+    image: ladicle/alpin-dockerbeat
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - monitoring_net
+    depends_on:
+      - elasticsearch
   fluentd:
     build: ./fluentd
     volumes:
