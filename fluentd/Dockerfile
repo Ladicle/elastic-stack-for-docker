@@ -1,4 +1,4 @@
-FROM fluent/fluentd
+FROM fluent/fluentd:v0.14.1
 
 USER fluent
 WORKDIR /home/fluent

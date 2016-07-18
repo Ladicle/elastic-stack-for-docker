@@ -19,7 +19,7 @@ services:
     depends_on:
       - elasticsearch
   dockerbeats:
-    image: ladicle/alpin-dockerbeat
+    image: ladicle/alpin-dockerbeat:1.3.0
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
