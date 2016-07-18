@@ -8,6 +8,16 @@ services:
       - monitoring_net
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data
+  kibana:
+    build: ./kibana
+    ports:
+      - "5601:5601"
+    networks:
+      - monitoring_net
+    volumes:
+      - ./kibana/config/:/opt/kibana/config/
+    depends_on:
+      - elasticsearch
 networks:
   monitoring_net:
     driver: bridge
