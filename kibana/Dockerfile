@@ -12,10 +12,12 @@ RUN set -ex \
     && kibana plugin --install elastic/sense
 
 # Setup dashboard
+COPY dashboards/ /etc/dashboards/
 RUN set -ex \
     && curl -O -L http://download.elastic.co/beats/dashboards/beats-dashboards-1.2.3.zip \
     && unzip beats-dashboards-1.2.3.zip \
-    && rm beats-dashboards-1.2.3.zip
+    && rm beats-dashboards-1.2.3.zip \
+    && cp -ru /etc/dashboards/* /beats-dashboards-1.2.3/dashboards/
 
 # Setup entrypoint
 COPY entrypoint.sh /tmp/entrypoint.sh

@@ -9,6 +9,11 @@ Based on the official images:
 * [Fluentd][5]
 * [Dockerbeat][6]
 
+## Snapshot of Dockerbeats Dashboard
+
+![kibana dockerbeats dashboards 01](img/graph00.png)
+![kibana dockerbeats dashboards 01](img/graph01.png)
+
 ## Requirements
 
 ### Setup
