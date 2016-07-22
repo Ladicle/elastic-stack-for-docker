@@ -8,6 +8,7 @@ services:
       - monitoring_net
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data
+    restart: always
   kibana:
     build: ./kibana
     ports:
@@ -18,6 +19,7 @@ services:
       - ./kibana/config/:/opt/kibana/config/
     depends_on:
       - elasticsearch
+    restart: always
   dockerbeats:
     image: ladicle/alpin-dockerbeat:1.3.0
     volumes:
@@ -26,6 +28,7 @@ services:
       - monitoring_net
     depends_on:
       - elasticsearch
+    restart: always
   fluentd:
     build: ./fluentd
     volumes:
@@ -37,6 +40,7 @@ services:
       - monitoring_net
     depends_on:
       - elasticsearch
+    restart: always
 networks:
   monitoring_net:
     driver: bridge
