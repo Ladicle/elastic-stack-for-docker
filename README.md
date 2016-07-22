@@ -1,9 +1,9 @@
 # Elastic stack for docker
 
-Run the basic Elastic stack (Elasticsearch, Kibana, Fluentd) with Docker and Docker-compose.
-Kibana contains Beats dashboards :)
+Run the basic Elastic stack (Elasticsearch, Kibana, Fluentd) with Docker and Docker-compose.  
+Kibana presets Beats dashboards :)
 
-Based on the official images:
+**Based on the official images:**
 * [elasticsearch][1]
 * [kibana][2]
 * [Fluentd][5]
@@ -26,17 +26,9 @@ Based on the official images:
 ```bash
 $ docker-compose up -d
 ```
-1. Start beats on target node.
-```bash
-$ curl -O -L https://download.elastic.co/beats/topbeat/topbeat-1.2.3-x86_64.tar.gz
-$ tar zxvf topbeat-1.2.3-x86_64.tar.gz
-$ cd topbeat-1.2.3-x86_64
-$ cat<<EOF >topbeat.yml
-output:
-  elasticsearch:
-    hosts: ["localhost:9200"]
-EOF
-$ ./topbeat -e -c topbeat.yml
+2. Access to kibana.
+```
+http://localhost:5601/app/kibana#/dashboard
 ```
 
 > Other beats packages are [here][7].
