@@ -9,4 +9,5 @@ fluentd/config/*
 
 # Ignore kibana configurations
 kibana/config/*
+!kibana/config/kibana.yml
 !kibana/config/.gitkeep
